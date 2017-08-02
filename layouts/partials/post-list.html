@@ -1,6 +1,5 @@
 <div class="posts">
-	{{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
-	{{ range $paginator.Pages -}}
+	{{- range .Paginator.Pages }}
 	<div class="post-teaser">
 		<header>
 		    <h1>
