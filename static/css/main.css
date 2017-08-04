@@ -428,7 +428,7 @@ p, ol, ul, dl, .math-display {
 	width: 100%
 }
 ol, ul {
-	list-style-position: inside
+	margin-left: 2.6em;
 }
 hr {
 	border: 0;
