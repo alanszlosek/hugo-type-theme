@@ -1,13 +1,11 @@
-
-{{ define "main" }}
-  {{ $data := .Data }}
-  <article>
-	<h1>{{ $data.Plural | humanize }}</h1>
-	<ul>
-      {{- range .Data.Terms.Alphabetical }}
-      <li><a href="{{ "/" | relURL }}{{ $data.Plural | urlize }}/{{ .Name | urlize }}/">{{ .Name | humanize }}</a> - {{ .Count }} posts</li>  
-      <!--<time>{{((index .Pages.ByDate.Reverse 0).Date.Format (default "January 2, 2006" $.Site.Params.dateFormat))}}</time>-->
-      {{- end}}
-    </ul>
-  </article>
-{{ end }}
+{{ define "main" -}}
+<div class="posts">
+    <div class="post-teaser">
+        {{ range .Pages -}}
+		<header>
+			<h3><a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        </header>
+        {{- end }}
+	</div>
+</div>
+{{- end }}
